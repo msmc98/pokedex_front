@@ -29,8 +29,6 @@
     80% {background-position: 0% 20%;}
     90% {background-position: 100% 0%;}
     100% {background-position: 0% 20%;}
-
-    
 }
 
 .login_form{
@@ -87,6 +85,17 @@ h1{
     padding-bottom: 3.3px;
     text-align: center;
     color: #343a40;
+}
+
+@media screen and (max-width: 584px){
+    .label{
+        border-radius: 10px;
+    }
+    .input{
+        margin-top: 10px;
+        border-radius: 10px;
+        border: 2px solid #ccc;
+    }
 }
 
 .no-account{

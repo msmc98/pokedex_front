@@ -6,7 +6,7 @@ import { authMethod } from '../api/authMethods'
 const Register = () => {
 
     const { register, formState: {errors}, handleSubmit } = useForm()
-    const url = 'http://localhost:1337/api/auth/local/register' 
+    const url = process.env.API_URL +'api/auth/local/register' 
 
     const onSubmit = (data) => {
         const misMatch = handlePassword(data)
