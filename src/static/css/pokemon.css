@@ -1,0 +1,101 @@
+
+.main-container{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.general-layout{
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+    color: #fff;
+    border-radius: 25px;
+}
+
+.right-layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-layout > img{
+    width: 300px;
+    height: 300px;
+}
+
+.left-layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+
+    .main-container{
+        margin: 15px 0;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+    }
+    .general-layout{
+        height: 100vh;
+        width: 90%;
+        flex-direction: row;
+        height: inherit;
+    }
+
+    .right-layout > img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .right-layout{
+        margin-top: 20px;
+    }
+
+    .left-layout{
+        margin-bottom: 20px;
+    } 
+}
+
+@media screen and (max-width: 768px){
+
+    .main-container{
+        margin: 15px 0;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+    }
+    .general-layout{
+        width: 190%;
+        height: 100%;
+        flex-direction: column;
+        height: inherit;
+    }
+
+    .right-layout > img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .right-layout{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .left-layout{
+        margin-bottom: 20px;
+    } 
+}
+    

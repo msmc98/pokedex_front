@@ -1,0 +1,58 @@
+.main-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    padding: 20px;
+}
+
+.back{
+    background-image: url('./../imgs/poke.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.back-searching{
+    background-image: url('./../imgs/poke.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 90vh;
+}
+
+.btn-dark{
+    margin: 20px 0px 50px 0;
+}
+
+.nextBar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.nextBar p{
+    color: #fff;
+    margin: 0;
+}
+
+.nextButton{
+    background-color: #000;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
