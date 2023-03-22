@@ -19,8 +19,8 @@
     "zustand": "^4.3.6"
   },
   "scripts": {
-    "start": "env-cmd -f src/.env.dev react-scripts start",
-    "build": "env-cmd -f src/.env.prod react-scripts build",
+    "start": "env-cmd -f .env.dev react-scripts start",
+    "build": "env-cmd -f .env.prod react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

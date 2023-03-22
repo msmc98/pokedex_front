@@ -7,8 +7,8 @@ import { authMethod, storageSave } from './../api/authMethods.js'
 const Login = () => {
 
     const { register, formState: {errors}, handleSubmit } = useForm()
-    let url = process.env.API_URL + 'api/auth/local' 
-
+    const url = process.env.REACT_APP_API_URL + 'api/auth/local'
+    
     const onSubmit = async (data) => {
         const res = await authMethod(url, data)
         const { jwt, user } = res
