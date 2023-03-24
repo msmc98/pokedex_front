@@ -48,7 +48,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit(manageErrors() && onSubmit)} className="login_form">
                     <div className="">
                         <label className="label">Email o User</label>
-                        <input className="input" type="email" autoComplete='true' {...register('identifier', 
+                        <input className="input" type="text" autoComplete='true' {...register('identifier', 
                             {required: 'El email o el user son requeridos para iniciar sesión'}
                         )} />
                     </div>
