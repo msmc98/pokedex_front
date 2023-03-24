@@ -24,7 +24,8 @@ const releaseToast = (message, type) => toast.custom(() => (
         &nbsp;
         {message}
     </div>
-    ));
+    //change duration
+), { duration: type === 'error' ? 1000 : 3000, position: type === 'error' ? 'bottom-center' : 'top-center' });
 
 
 export default releaseToast;

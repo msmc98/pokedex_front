@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom'
 import { authMethod } from '../api/authMethods'
 import { Toaster } from 'react-hot-toast';
 import releaseToast from '../shared/Toasts';
-import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
     const { register, formState: {errors}, handleSubmit } = useForm()
     const url = process.env.REACT_APP_API_URL +'api/auth/local/register'
-    const navigate = useNavigate()
 
     const onSubmit = (data) => {
         const misMatch = handlePassword(data)
@@ -30,16 +28,19 @@ const Register = () => {
 
     const handleRegister = async (data) => {
         try{
-            let res = await authMethod(url, data)
-            await res.json()
+            const res = await authMethod(url, data)
+            if(res?.error){
+                releaseToast(res.error.message, 'error')
+                return;
+            }
             releaseToast('Usuario creado correctamente', 'success')
-            navigate('/')
+            window.location.href = ('/')
             return;
         }catch(e){
-            releaseToast('Ha ocurrido un error inesperado, inténtelo de nuevo más tarde', 'error')
+            console.log(e)
+            releaseToast(e.message, 'error')
             return;
-        }
-        
+        }   
     }
 
     const manageHeight = () => {
