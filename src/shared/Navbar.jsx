@@ -2,8 +2,11 @@ import { NavLink } from "react-router-dom";
 import routes from "../routes/routes";
 import photo from './../static/imgs/pokedex.webp'
 import './../static/css/navbar.css'
+import { useState } from "react";
 
 const Navbar = () => {
+
+  const [opened, setOpened ] = useState(false)
  
   const handleLogout = (e) => {
     localStorage.clear();
@@ -18,6 +21,10 @@ const Navbar = () => {
     )
   }
 
+  const toggleBurger = () => {
+    setOpened(!opened)
+  }
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       {/* <div className="navbar-brand">
@@ -25,17 +32,44 @@ const Navbar = () => {
           Login
         </Link>
       </div> */}
-      <button
+      {!opened && <button
+        style={{zIndex: '99', backgroundColor: '#343a40', color: '#000'}}
         className="navbar-toggler"
         type="button"
-        data-toggle="collapse"
-        data-target="#navbarColor01"
-        aria-controls="navbarColor01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+        onClick={toggleBurger}
       >
         <span className="navbar-toggler-icon"></span>
+      </button>}
+
+      {opened && <><button
+        style={{zIndex: '99', backgroundColor: '#343a40', color: '#000'}}
+        className="navbar-toggler"
+        type="button"
+        onClick={toggleBurger}>
+          
+        <span className="navbar-toggler-icon"></span>
+        {routes && routes.length !== 0 ? (
+            routes.map((route) => {
+              if (route.visible) {
+                return (
+                  <NavLink
+                    key={route.path + route.name}
+                    to={route.path}
+                    className="nav-item"
+                    style={{color: 'rgb(154 157 160)'}}
+                  >
+                    <span className="nav-link">{route.name !== 'Pokedex' ? route.name : renderLogo()}</span>
+                  </NavLink>
+                );
+              }
+              return "";
+            })
+          ) : (
+            ''
+          )}
       </button>
+      </>
+      }
 
       <div className="collapse navbar-collapse" id="navbarColor01">
         <ul className="navbar-nav mr-auto">
@@ -60,7 +94,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-brand">
-        <div className="nav-item" style={{"cursor":"pointer"}} onClick={handleLogout}>
+        <div className="nav-item" style={{"cursor":"pointer",color: 'rgb(154 157 160)'}} onClick={handleLogout}>
           Logout
         </div>
       </div>

@@ -113,13 +113,13 @@ const Pokemon = (props) => {
                     pokemon.id > 1 &&
                     <div className="nextButton" onClick={handlePrevious}>
                         <img src={back} alt="back" style={{display: 'inline'}}/>
-                        <p style={{display: 'inline'}}>Anterior</p>
+                        <p style={{display: 'inline', color: 'rgb(154 157 160)'}}>Anterior</p>
                     </div>
                 }
                 {
                     pokemon.id < 10271 &&
                     <div className="nextButton" onClick={handleNext}>
-                    <p style={{display: 'inline'}}>Siguiente</p>
+                    <p style={{display: 'inline', color: 'rgb(154 157 160)'}}>Siguiente</p>
                     <img src={next} alt="next" />
                 </div>
                 }

@@ -10,8 +10,9 @@
 }
 
 .back{
-    background-image: url('./../imgs/poke.png');
+    background-image: url('./../imgs/pokeball.webp');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -48,8 +49,8 @@
 
 .nextButton{
     background-color: #000;
-    border: 1px solid #fff;
-    color: #fff;
+    border: 2px solid rgb(154 157 160);
+    color:  'rgb(154 157 160)';
     padding: 10px 20px;
     margin: 0 10px;
     text-decoration: none;
